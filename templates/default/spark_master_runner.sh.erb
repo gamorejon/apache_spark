@@ -15,7 +15,7 @@
 # limitations under the License.
 
 export SPARK_DAEMON_JAVA_OPTS="$SPARK_DAEMON_JAVA_OPTS -Dspark.root.logger=<%= @daemon_root_logger %> \
-                               -Dspark.log.file=spark-standalone-master.log"
+                               -Dspark.log.file=spark-standalone-master.log -Djava.net.preferIPv4Stack=true"
 
 exec <%= @install_dir %>/bin/spark-class \
     org.apache.spark.deploy.master.Master \
